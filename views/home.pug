@@ -1,0 +1,19 @@
+extends layout.pug
+
+block content
+  h2 All Book Reviews
+  if reviews && reviews.length
+    each review in reviews
+      .review
+        h3 
+          a(href=`/reviews/${review.id}`)= review.title
+        p Written by: #{review.author}
+        if review.genre
+          p Genre: #{review.genre}
+        p= review.reviewText.substring(0, 100) + '...'
+        a.button(href=`/reviews/${review.id}`) Read More
+        a.button(href=`/reviews/${review.id}/edit`) Edit
+        form(action=`/reviews/${review.id}/delete`, method="POST", style="display:inline;")
+          button.button(type="submit") Delete
+  else
+    p No reviews found. Be the first to add one!
