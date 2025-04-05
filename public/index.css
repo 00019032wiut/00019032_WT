@@ -69,6 +69,7 @@ header nav a:hover {
   padding: 1em;
   border-bottom: 1px solid #eee;
   transition: background 0.3s ease;
+  margin-bottom: 1em; /* Added margin for spacing between reviews */
 }
 
 .review:hover {
@@ -83,6 +84,13 @@ header nav a:hover {
 
 .review h3 a:hover {
   color: #e67e22;
+}
+
+/* Container for review actions (buttons) */
+.review-actions {
+  display: flex;
+  gap: 0.5em; /* Space between buttons */
+  margin-top: 0.5em; /* Space above the buttons */
 }
 
 /* Forms */
