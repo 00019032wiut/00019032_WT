@@ -1,0 +1,20 @@
+extends layout.pug
+
+block content
+  h2 New Book Review
+  if error
+    p(style="color: red")= error
+  form(action="/reviews/new", method="POST")
+    label(for="title") Title:
+    input(type="text", name="title", id="title", required)
+    br
+    label(for="author") Author:
+    input(type="text", name="author", id="author", required)
+    br
+    label(for="genre") Genre:
+    input(type="text", name="genre", id="genre")
+    br
+    label(for="reviewText") Review:
+    textarea(name="reviewText", id="reviewText", required)
+    br
+    button(type="submit") Submit Review

@@ -1,0 +1,12 @@
+extends layout.pug
+
+block content
+  h2= review.title
+  p Written by: #{review.author}
+  if review.genre
+    p Genre: #{review.genre}
+  p= review.reviewText
+  a.button(href="/reviews") Back to Reviews
+  a.button(href=`/reviews/${review.id}/edit`) Edit Review
+  form(action=`/reviews/${review.id}/delete`, method="POST", style="display:inline;")
+    button.button(type="submit") Delete Review
